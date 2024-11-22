@@ -1,0 +1,612 @@
+<!DOCTYPE html> 
+<html lang="en"> 
+<head> 
+    <meta charset="UTF-8"> 
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"> 
+    <title>Online Food Delivery</title> 
+    <style> 
+        *{ 
+            margin:0; 
+            padding: 0; 
+        } 
+        .main{ 
+            width:100%; 
+            background: linear-gradient(to 
+top,rgba(0,0,0,0.5)50%,rgba(0,0,0,0.5)50%),url(bg4.jpg); 
+            background-position: center; 
+            background-size: cover; 
+            height: 109vh; 
+        } 
+        .navbar{ 
+            width: 1200px; 
+            height: 75px; 
+            margin: auto; 
+        } 
+        .icon{ 
+            width: 200px; 
+            float: left; 
+            height: 70px; 
+        } 
+        .logo{ 
+            color: #ff7200; 
+            font-size: 30px; 
+            font-family: Arial; 
+            padding-left: 20px; 
+            float: left; 
+            padding-top: 10px; 
+             
+        } 
+ 
+ 
+23  
+ 
+ 
+        .menu{ 
+            width: 400px; 
+            float: left; 
+            height: 70px; 
+        } 
+        ul{ 
+            float: left; 
+            display: flex; 
+            justify-content: center; 
+            align-items: center; 
+        } 
+        ul li{ 
+            list-style: none; 
+            margin-left: 62px; 
+            margin-top: 27px; 
+            font-size: 17px; 
+        } 
+        ul li a{ 
+            text-decoration: none; 
+            color: #fff; 
+            font-family: Arial; 
+            font-weight: bold; 
+            transition: 0.4s ease-in-out; 
+        } 
+        ul li a:hover{ 
+            color: #ff7200; 
+        } 
+        .search{ 
+            width: 330px; 
+            float: left; 
+            margin-left: 270px; 
+        } 
+        .srch{ 
+            font-family:'Times New Roman'; 
+            width: 200px; 
+            height: 40px; 
+            background: transparent; 
+            border: 1px solid #ff7200; 
+            margin-top: 13px; 
+            color: #fff; 
+ 
+ 
+24  
+ 
+ 
+            border-right: none; 
+            font-size: 16px; 
+            float: left; 
+            padding: 10px; 
+            border-bottom-left-radius: 5px; 
+            border-top-left-radius: 5px; 
+        } 
+        .btn{ 
+            width: 100px; 
+            height: 40px; 
+            background: #ff7200; 
+            border: 2px solid #ff7200; 
+            margin-top: 13px; 
+            color: #fff; 
+            font-size: 15px; 
+            border-bottom-right-radius: 5px; 
+            border-bottom-right-radius: 5px; 
+        } 
+        .btn:focus{ 
+            outline:none; 
+        } 
+        .srch:focus{ 
+            outline: none; 
+        } 
+        .content{ 
+            width: 1200px; 
+            height: auto; 
+            margin: auto; 
+            color: #fff; 
+            position: relative; 
+        } 
+        .content .par{ 
+            padding-left: 20px; 
+            padding-bottom: 25px; 
+            font-family: Arial; 
+            letter-spacing: 1.2px; 
+            line-height: 30px; 
+        } 
+        .content h1{ 
+            font-family: 'Times New Roman'; 
+ 
+ 
+25  
+ 
+ 
+            font-size: 50px; 
+            padding-left: 20px; 
+            margin-top: 9%; 
+            letter-spacing: 2px; 
+        } 
+        .content .cn{ 
+            width: 150px; 
+            height: 40px; 
+            margin-top: 3%; 
+            background: #ff7200; 
+            border: none; 
+            margin-bottom: 10px; 
+            margin-left: 30px; 
+            font-size: 15px; 
+            border-radius: 10px; 
+            cursor: pointer; 
+            transition: .4s ease; 
+        } 
+        .content .cn a{ 
+            text-decoration: none; 
+            color: #000; 
+            transition: .3s ease; 
+        } 
+        .cn:hover{ 
+            background-color: #fff; 
+        } 
+        .form{ 
+            width: 250px; 
+            height: 380px; 
+            background: linear-gradient(to 
+top,rgba(0,0,0,0.8)50%,rgba(0,0,0,0.8)50%); 
+            position: absolute; 
+            top: -20px; 
+            left: 870px; 
+            border-radius: 10px; 
+            padding: 25px; 
+        } 
+        .form h2{ 
+            width: 220px; 
+            font-family: sans-serif; 
+ 
+ 
+26  
+ 
+ 
+            text-align: center; 
+            color: #ff7200; 
+            font-size: 22px; 
+            background-color: #fff; 
+            border-radius: 10px; 
+            margin: 2px; 
+            padding: 8px; 
+        } 
+        .form input{ 
+            width: 240px; 
+            height: 35px; 
+            background: transparent; 
+            border-bottom: 1px solid #ff7200; 
+            border-top: none; 
+            border-right: none; 
+            border-left: none; 
+            color: #fff; 
+            font-size: 15px; 
+            letter-spacing: 1px; 
+            margin-top: 30px; 
+            font-family: sans-serif; 
+        } 
+        .form input:focus{ 
+            outline: none; 
+        } 
+        ::placeholder{ 
+            color: #fff; 
+            font-family: Arial; 
+        } 
+        .btnn{ 
+            width: 240px; 
+            height: 40px; 
+            background: #ff7200; 
+            border: none; 
+            margin-top: 30px; 
+            font-size: 18px; 
+            border-radius: 10px; 
+            cursor: pointer; 
+            color: #fff; 
+            transition: 0.4s ease; 
+ 
+ 
+27  
+ 
+ 
+        } 
+        .btnn:hover{ 
+            background: #fff; 
+            color: #ff7200; 
+        } 
+        .btnn a{ 
+            text-decoration: none; 
+            color: #000; 
+            font-weight: bold; 
+        } 
+        .form .link{ 
+            font-family: Arial, Helvetica, sans-serif; 
+            font-size: 17px; 
+            padding-top: 20px; 
+            text-align: center; 
+        } 
+        .form .link a{ 
+            text-decoration: none; 
+            color: #ff7200; 
+        } 
+        .liw{ 
+            padding-top: 15px; 
+            padding-bottom: 10px; 
+            text-align: center; 
+        } 
+        .form { 
+     
+        } 
+        body { 
+            font-family: Arial, sans-serif; 
+            margin: 0; 
+            padding: 0; 
+            background-color: #fffefe; 
+        } 
+        header { 
+           /* background-color: #36fae3;*/ 
+            color: rgb(0, 0, 0); 
+            padding: 10px 0; 
+            text-align: center; 
+        } 
+ 
+ 
+28  
+ 
+ 
+        nav ul { 
+            list-style-type: none; 
+            padding: 0; 
+        } 
+        nav ul li { 
+            display: inline; 
+            margin: 0 15px; 
+        } 
+        nav ul li a { 
+            color: rgb(0, 0, 0); 
+            text-decoration: none; 
+        } 
+        .container { 
+            width: 80%; 
+            margin: 20px auto; 
+        } 
+        .menu-item { 
+            background-color: white; 
+            padding: 10px; 
+            margin: 10px 0; 
+            border: 1px solid #ddd; 
+            border-radius: 5px; 
+        } 
+        .menu-item button { 
+            background-color: #ff5733; 
+            color: white; 
+            border: none; 
+            padding: 5px 10px; 
+            cursor: pointer; 
+        } 
+        .menu-item button:hover { 
+            background-color: #e14b28; 
+        } 
+        footer { 
+           /* background-color: #36fae3;*/ 
+            color: white; 
+            text-align: center; 
+            padding: 10px 0; 
+            position: fixed; 
+            bottom: 0; 
+ 
+ 
+29  
+ 
+ 
+            width: 100%; 
+        } 
+        .error { 
+            color: red; 
+            display: none; 
+        } 
+        #cart { 
+            background-color: white; 
+            padding: 10px; 
+            margin: 20px 0; 
+            border: 1px solid #ddd; 
+            border-radius: 5px; 
+        } 
+        #cart table { 
+            width: 100%; 
+        } 
+        #cart table, #cart th, #cart td { 
+            border: 1px solid #ddd; 
+            border-collapse: collapse; 
+            padding: 8px; 
+            text-align: left; 
+        } 
+        .menu-item{ 
+            float: left; 
+        } 
+        img{ 
+            width: 350px; 
+            height: 250px; 
+        }    
+    </style> 
+</head> 
+ 
+<body> 
+    <div class="main"> 
+        <div class="navbar"> 
+            <div class="icon"> 
+                <h1 class="logo">Online Food Delivery</h1> 
+            </div> 
+            <div class="menu"> 
+                <ul> 
+ 
+ 
+30  
+ 
+ 
+                    <li><a href="#">HOME</a></li> 
+                    <li><a href="#">MENU</a></li> 
+                    <li><a href="#">ORDER</a></li> 
+                    <li><a href="#">CONTACT</a></li> 
+                    <li><a href="#">ABOUT</a></li> 
+                </ul> 
+            </div> 
+            <div class="search"> 
+                <input class="srch" type="search" name="" placeholder="Type to 
+text"> 
+                <a href="#"> <button class="btn">Search</button></a> 
+            </div> 
+        </div> 
+        <div class="content"> 
+            <h1>Welcome!</h1> 
+            <p>Bring people together with great food</p> 
+            <button class="cn"><a href="#">JOIN US</a></button> 
+            <div class="form"> 
+                <h2>Login Here</h2> 
+                <input type="email" name="email" placeholder="Enter Email Here"> 
+                <input type="password" name="" placeholder="Enter Password 
+Here"> 
+                <button class="btnn"><a href="#">Login</a></button> 
+                <p class="link">Don't have an account</p><br> 
+                <a href="#">Sign up</a>here</a></p> 
+                <p class="liw">Log in with</p> 
+            </div> 
+        </div> 
+    </div> 
+    <section id="home" class="container"> 
+        <h2>HOME</h2> 
+        <p>Welcome to our online food delivery service. Browse our menu and 
+place your order online.</p> 
+    </section>    
+    <section id="menu" class="container"> 
+        <h2>MENU</h2> 
+        <div class="menu-item"> 
+            <h3>Pizza</h3> 
+ 
+ 
+31  
+ 
+ 
+            <img 
+src="https://th.bing.com/th?id=OIP.PyD2FPss2X99L71KPv4XkwHaE8&w=30
+ 6&h=204&c=8&rs=1&qlt=90&o=6&dpr=1.3&pid=3.1&rm=2"> 
+            <p>Delicious cheese pizza with fresh ingredients.</p> 
+            <p><b>Price</b>: $10</p> 
+            <button onclick="addToCart('Pizza', 10)">Add to Cart</button> 
+        </div> 
+        <div class="menu-item"> 
+            <h3>Burger</h3> 
+            <img 
+src="https://th.bing.com/th?id=OIP.pUqX9ysdiglqUspiQYwylQHaEn&w=316
+ &h=197&c=8&rs=1&qlt=90&o=6&dpr=1.3&pid=3.1&rm=2"> 
+            <p>Juicy beef burger with fresh lettuce and tomatoes.</p> 
+            <p><b>Price</b>: $8</p> 
+            <button onclick="addToCart('Burger', 8)">Add to Cart</button> 
+        </div> 
+        <div class="menu-item"> 
+            <h3>Pasta</h3> 
+            <img 
+src="https://th.bing.com/th?id=OIP.64vXNk6FRg6TzVCW7u2zLAHaFj&w=28
+ 8&h=216&c=8&rs=1&qlt=90&o=6&dpr=1.3&pid=3.1&rm=2"> 
+            <p>Classic Italian pasta with rich tomato sauce.</p> 
+            <p><b>Price</b>: $12</p> 
+            <button onclick="addToCart('Pasta', 12)">Add to Cart</button> 
+        </div> 
+        <div class="menu-item"> 
+            <h3>Gobi</h3><img src="https://th.bing.com/th?id=OIP.o
+GdDI8voTCQayVbu_
+VdQAAAA&w=250&h=250&c=8&rs=1&qlt=90&o=6&dpr=1.3&pid=3.1&rm
+ =2"> 
+            <p>This snack is my all-time favorite!</p> 
+            <p><b>Price</b>:$10</p> 
+            <button onclick="addToCart('Gobi',10)">Add to Cart</button> 
+        </div> 
+        <div class="menu-item"> 
+            <h3>Noodles</h3><img 
+src="https://th.bing.com/th/id/OIP.uvOeLshQJg6uaoeKsVe
+7gHaHa?w=202&h=203&c=7&r=0&o=5&dpr=1.3&pid=1.7"> 
+            <p>Twirling life on a fork ,one Noodle at a time</p> 
+            <p><b>Price</b>:$20</p> 
+ 
+ 
+32  
+ 
+ 
+            <button onclick="addToCart('noodles',20)">Add to Cart</button> 
+        </div> 
+        <div class="menu-item"> 
+            <h3>Pani Puri</h3><img 
+src="https://th.bing.com/th?id=OIP.q_bdmwUmNLU-27Y9Q
+Tt0AHaHa&w=250&h=250&c=8&rs=1&qlt=90&o=6&dpr=1.4&pid=3.1&rm=
+ 2"> 
+            <p>Happiness is a plate of Golgappas!</p> 
+            <p><b>Price</b>:$15</p> 
+            <button onclick="addToCart('pani puri',15)">Add to Cart</button> 
+        </div> 
+    </section> 
+    <section id="order" class="container"> 
+        <h2>ORDER</h2> 
+        <form id="orderForm"> 
+            <label for="name">Name:</label><br> 
+            <input type="text" id="name" name="name" required><br> 
+            <span class="error" id="nameError">Please enter your 
+name</span><br> 
+            <label for="address">Address:</label><br> 
+            <input type="text" id="address" name="address" required><br> 
+            <span class="error" id="addressError">Please enter your 
+address</span><br> 
+            <label for="phone">Phone:</label><br> 
+            <input type="tel" id="phone" name="phone" required><br> 
+            <span class="error" id="phoneError">Please enter your phone 
+number</span><br> 
+            <label for="food">Select Food:</label><br> 
+            <select id="food" name="food" required> 
+                <option value="">Select an item</option> 
+                <option value="pizza">Pizza</option> 
+                <option value="burger">Burger</option> 
+                <option value="pasta">Pasta</option> 
+                <option value="gobi">Gobi</option> 
+                <option value="noodles">Noodle</option> 
+                <option value="pani puri">Pani Puri</option> 
+            </select><br> 
+            <span class="error" id="foodError">Please select a food 
+item</span><br> 
+            <input type="submit" value="Place Order"> 
+ 
+ 
+33  
+ 
+ 
+        </form> 
+    </section> 
+    <section id="cart" class="container"> 
+        <h2>Cart</h2> 
+        <table> 
+            <thead> 
+                <tr> 
+                    <th>Item</th> 
+                    <th>Price</th> 
+                    <th>Quantity</th> 
+                    <th>Total</th> 
+                </tr> 
+            </thead> 
+            <tbody id="cartItems"> 
+            </tbody> 
+        </table> 
+        <p id="cartTotal"></p> 
+    </section>    
+    <section id="contact" class="container"> 
+        <h2>CONTACT</h2> 
+        <p>Email: onlinefooddelivery@email.com</p> 
+        <p>Phone: +91 9642085306</p> 
+    </section>     
+    <footer> 
+        <p>&copy; 2024-2025 Online Food Delivery. All rights reserved.</p> 
+    </footer>  
+    <script> 
+    let cart = [];   
+    function addToCart(item, price) { 
+        const cartItem = cart.find(ci => ci.item === item); 
+        if (cartItem) { 
+            cartItem.quantity += 1; 
+            cartItem.total = cartItem.quantity * cartItem.price; 
+        } else { 
+            cart.push({ item, price, quantity: 1, total: price }); 
+        } 
+        updateCart(); 
+    } 
+     
+    function updateCart() { 
+ 
+ 
+34  
+ 
+ 
+        const cartItems = document.getElementById('cartItems'); 
+        cartItems.innerHTML = '';    
+        let cartTotal = 0; 
+        cart.forEach(ci => { 
+            cartTotal += ci.total; 
+            const row = document.createElement('tr'); 
+            row.innerHTML = ` 
+                <td>${ci.item}</td> 
+                <td>$${ci.price}</td> 
+                <td>${ci.quantity}</td> 
+                <td>$${ci.total}</td> 
+            `; 
+            cartItems.appendChild(row); 
+        });     
+        document.getElementById('cartTotal').innerText = `Total: $${cartTotal}`; 
+    } 
+    document.getElementById('orderForm').addEventListener('submit', 
+function(event) { 
+        var isValid = true;     
+        var name = document.getElementById('name').value; 
+        var address = document.getElementById('address').value; 
+        var phone = document.getElementById('phone').value; 
+        var food = document.getElementById('food').value;     
+        if (!name) { 
+            document.getElementById('nameError').style.display = 'block'; 
+            isValid = false; 
+        } else { 
+            document.getElementById('nameError').style.display = 'none'; 
+        }     
+        if (!address) { 
+            document.getElementById('addressError').style.display = 'block'; 
+            isValid = false; 
+        } else { 
+            document.getElementById('addressError').style.display = 'none'; 
+        }    
+        if (!phone) { 
+            document.getElementById('phoneError').style.display = 'block'; 
+            isValid = false; 
+        } else { 
+            document.getElementById('phoneError').style.display = 'none'; 
+ 
+ 
+35  
+ 
+ 
+        } 
+     
+        if (!food) { 
+            document.getElementById('foodError').style.display = 'block'; 
+            isValid = false; 
+        } else { 
+            document.getElementById('foodError').style.display = 'none'; 
+        } 
+     
+        if (!isValid) { 
+            event.preventDefault(); 
+        } else { 
+            alert('Order placed successfully!'); 
+        } 
+    }); 
+    </script> 
+     
+    </body> 
+    </html> 
+     
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
